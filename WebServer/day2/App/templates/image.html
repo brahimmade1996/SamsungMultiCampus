@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width=device-width"> -->
+        <meta name = 'viewport' content = 'width=divice-width, initial-scale= 1.0'>
+
+        <title>Flask Web Server</title>
+        <style>
+            @import url(//fonts.google.com/earlyaccess/nanumgothic.css);
+            #nav {background-color: lightpink; text-align: center;
+                 width : 100%;
+                 font-family: "serif";}
+            
+            #header {text-align: center; 
+                    font-size: 30px; 
+                    color: white; 
+                    background-image: url('/static/header.png');
+                    height: 150px; width: 100%; 
+                    padding-top: 10px;
+                    font-family: "Times", Times New Roman, Times, serif}
+            #vidio { width : '720'; height : '600'; text-align: center;}
+        </style>
+    </head>
+
+
+    <body>
+        <div id = 'header'>
+            <h1> SWEET DAY!</h1>
+        </div>
+
+        <div >
+            <font color= 'red'><h1>{{title}}</h1></font></div>
+        <nav>
+            <table id = 'nav'>
+                <tr>
+                    <td> <a href="#pre">HOME</a></td></li>
+                    <td> <a href="#pre">NEWS</a></td></li>
+                    <td> <a href="#pre">CONTACT</a></td></li>
+                    <td> <a href="#pre">ABOUT</a></td></li>
+            </tale>
+        </nav>
+
+        <table>
+            <tr>
+                <td id = 'img'>
+                {% for s in listData %}
+            
+                    <table>
+                        <tr>
+                            <td>
+                                <a href=/view?id={{s.id}}>
+                                <img src="/static/{{s.img}}" width = 200>
+                                </a>
+                            </td>
+                            <td><h4>{{s.title}}</h4></td>
+                            <td><a href="/deleteImage?id={{s.id}}">delete</a></td>
+                        </tr>
+                    </table>
+                {% endfor %}
+
+                <form action = "/fileUpload" method = "POST" enctype = "multipart/form-data">      
+                    <!-- <input type = "file" name = "file1" /> <br> -->
+                    <input type = 'file' name = 'file1' accept = 'image/*' capture='camera'/> 
+                    <br>
+                        title :<input type=text name=title>
+                    <select name = algorithm>
+                        <option value=0>YOLO</option>
+                        <option value=1>face decection</option>
+                    </select>
+                    <input type = "submit" value="enter"/>
+
+                </form>
+                </td>
+                
+                <!-- <td id = 'video'>
+                    <video src="/static/sweet.mp4" autoplay width ='720' ></video>  
+                    <h2>Sweetness </h2> 
+                    <p>Sweetness is a basic taste most commonly perceived when eating foods rich in sugars. Sweet tastes are generally regarded as pleasurable, except when in excess.[citation needed] In addition to sugars like sucrose, many other chemical compounds are sweet, including aldehydes, ketones, and sugar alcohols. Some are sweet at very low concentrations, allowing their use as non-caloric sugar substitutes. Such non-sugar sweeteners include saccharin and aspartame. Other compounds, such as miraculin, may alter perception of sweetness itself.
+                    </p>  
+                </td> -->
+
+                <td>
+                    <img src="/static/{{listData[-1].img}}" width = 700>
+
+
+                </td>
+            </tr>
+            </table>
+    </body>
+</html>
