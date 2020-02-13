@@ -8,6 +8,8 @@ data/
 *.weights
 *.names
 *.bin
+*.exe
+*.sqlite3
 
 ### Data ###
 *.csv
