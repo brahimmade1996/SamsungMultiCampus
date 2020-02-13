@@ -4,6 +4,10 @@
 
 images/
 data/
+*.cfg
+*.weights
+*.names
+*.bin
 
 ### Data ###
 *.csv
