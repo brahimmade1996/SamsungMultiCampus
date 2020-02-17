@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Django Start</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+
+
+    <h1>야호!!! Django도 재밌구만!</h1>
+    <h1> 받은 메시지: {{s.img}} </h1>
+
+    {% for  d in data %}
+
+        이름{{d.name}}  age{{d.age}} <br>
+
+    {% endfor %}
+
+     <!-- 별도의 url이 아닌 자기 자신 호출 -->
+    <form action='/searchuser'>
+        <input type ='text' id = 'q' name = 'q'>
+        <input type="submit" id = 'bnt' value = 'search'> 
+    </form>
+
+    <div id = 'result'>result</div>
+
+    <srcipt>
+        $('#bnt').click(function(){
+            q = $('#q').val()
+
+            var param = {q: q}
+            $.get('/listuser'), parma, function(data){
+                $(#result).html(data)
+
+            }
+
+
+        })
+    </srcipt>
+
+</body>
+</html>
