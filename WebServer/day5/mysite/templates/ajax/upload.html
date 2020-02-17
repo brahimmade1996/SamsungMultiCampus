@@ -1,0 +1,77 @@
+
+<!-- saved from url=(0044)http://10.5.4.100/templates/ajax/upload.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+  .bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+  .percent { position:absolute; display:inline-block; top:3px; left:48%; }
+</style><script src="./upload_files/jquery-3.3.1.min.js.다운로드"></script><script src="./upload_files/jquery.form.js.다운로드"></script></head>
+
+
+
+
+
+<body><form action="/upload" enctype="multipart/form-data" method="POST">
+    <!-- post방식으로 upload함수를 만들 때 예외저치를 @csrf_exempt로 예외처리했는데, 이는 바람직하지 않음.
+    template 안에 시스템 함수를 넣으면 가능  -->
+    {% csrf_token %}
+      <input name="title" value="테스트1">
+      <input name="contents" value="테스트 자료입니다.">
+      <input type="file" name="file1">
+      <input type="submit" value="upload">
+</form>
+
+
+
+<!-- progress 안에 bar, persent가 있는데, 겹쳐있음. -->
+<div class="progress">
+    <div class="bar"></div>
+    <div class="percent">0%</div>
+</div>
+<div id="status"></div>
+
+<script>
+    $('#status').html('<font color = red>안녕하세요</font>')
+
+</script>
+
+<!-- 익명함수를 쓰는 이유: 관련된 호출.정의 부분을 한곳에 모으기 위해서
+파이썬, 정의와 사용이 따로 됨 -->
+<script>
+$(function() {
+    //  $ : 함수명의 하나. class가 bar인 노드를 찾아
+    var bar = $('.bar');
+    var percent = $('.percent');
+    var status = $('#status');  
+
+    // 실제 form tag에  AJAX 적용
+    //  form에 있는 데이터를 취합해서 묶기
+    $('form').ajaxForm({
+        beforeSend: function() {
+            status.empty();
+            var percentVal = '0%';
+            bar.width(percentVal);
+            percent.html(percentVal);
+        },
+        uploadProgress: function(event, position, total, percentComplete) {
+            var percentVal = percentComplete + '%';
+            bar.width(percentVal);
+            percent.html(percentVal);
+        },
+        complete: function(xhr) {
+        //    status.html("성공")
+            // 서버가 나에게 보내준 메시지 보여주기
+            status.html(xhr.responseText) 
+        },
+       error:function(e){
+          status.html("성공")
+       }
+
+    });
+});
+
+ </script>
+
+</body></html>
