@@ -1,0 +1,16 @@
+<!-- import, includ 개념 -->
+{% extends 'blog/base.html' %}
+
+
+<!-- base template안의 위치 지정 -->
+
+{% block content %}
+
+게시물을 보여줘<br>
+
+    {{d.text|linebreaks}}  
+    <!-- linebreaks: enter -> <br>로 바꿔줌 -->
+
+    <a href="{%  url 'edit' d.pk  %}">수정</a>
+
+{% endblock %}

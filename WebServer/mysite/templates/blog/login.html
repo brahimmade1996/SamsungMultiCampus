@@ -1,0 +1,69 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<title>Happy Birthday</title>
+{% load static %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+<style>
+
+nav {background-color:whitesmoke;
+        border: 1px solid rgb(167, 164, 164);
+        position: absolute;
+        top: 50px;
+        height: 30;
+        width: 99% ;
+        /* display: block; */
+        padding-bottom: 20px;
+
+        
+
+    }
+  nav ul li { display:inline; 
+            font:bold 10px Dotum rgb(122, 122, 122); 
+            padding:0 20px;
+            vertical-align: center;
+ }
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- <form action = '' method = post> -->
+    <!-- 정확하게 경로를 지정하기 위해서 urls.py에서 지정한 name이름 쓰기 -->
+<form action="{% url 'login' %}" method = post>
+    {% csrf_token %}
+    username<input type=text name = username> <br>
+    password <input type = password name = password><br>
+    <input type = submit value = 'login'>
+</form>
+
+<br>
+<br>
+
+<nav>
+    <ul>
+        <li> File </li>
+        <li> Edit </li>
+        <li> View </li>
+        <li> Cell </li>
+        <li> kernel </li>
+        <li> Help </li>
+
+    </ul>
+</nav>
+
+
+</body>
+</html>

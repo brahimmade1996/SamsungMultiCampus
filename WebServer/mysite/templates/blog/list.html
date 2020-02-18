@@ -1,0 +1,38 @@
+<!-- import, includ 개념 -->
+{% extends 'blog/base.html' %}
+
+
+<!-- base template안의 위치 지정 -->
+
+{% block content %}
+
+    sub-template<br>
+
+    {% for d in data%}
+
+    <!-- get 방식으로 보내려면: a href: /blog/id =... -->
+    <!-- 동적 url을 가져오려면 -->
+        <!-- # 절대경로로 쓰기 위해서
+        # 이름이 detail인 urls.py의 절대 경로를 계산함.
+        # pk 파라미터가 있기 때문에: 제일 적합한 방법  -->
+        <a href="{% url 'detail' d.pk %}">{{d.title}}</a><br>
+
+        <!-- 절대 경로로 쓰는 것은 ok -->
+        <!-- <a href="/blog/{{d.pk}}/detail">{{d.title}}</a><br> -->
+
+        <!-- 정적 방법: 파라미터 네임벨유를 통한 방법 -->
+        <!-- <a href="/blog/detail?id={{d.pk}}">{{d.title}}</a><br> -->
+
+
+        <!-- # view 기반으로 하면서 상대경로로 쓰면 안됨. -->
+        <!-- <a href="{{d.pk}}/detail">{{d.title}}</a><br> -->
+        <!-- {{d.text|linebreaks}}    # 목록만 보여주도록 하기 위해서 빼기-->
+        <!-- linebreaks: enter -> <br>로 바꿔줌 -->
+        <hr>
+    {%endfor%}
+
+
+    
+
+{% endblock %}
+

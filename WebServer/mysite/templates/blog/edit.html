@@ -1,0 +1,27 @@
+
+<form action="{% url 'edit' pk %}" method=post>
+    {% csrf_token %}
+ 
+        {{ form.as_p }}
+ 
+    <input type="submit" value="작성" >
+ 
+ </form>
+ 
+
+<!-- html을 활용해서 field를 연동할 때 -->
+
+<!-- <form action = '' method = post>
+    <정확하게 경로를 지정하기 위해서 urls.py에서 지정한 name이름 쓰기 -->
+<!-- <form action="{% url 'add' %}" method = post>
+    {% csrf_token %}
+   title <input input = text name = 'title' ><br>
+   text <textarea rows =10 clos = 30 name = 'text'>
+   </textarea><br>
+    <input type="submit" value = '글 올리기'>
+    
+</form> --> 
+
+
+
+
