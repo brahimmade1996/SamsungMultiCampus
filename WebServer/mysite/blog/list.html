@@ -1,0 +1,25 @@
+<!-- import, includ 개념 -->
+{% extends 'blog/base.html' %}
+
+
+<!-- base template안의 위치 지정 -->
+
+{% block content %}
+    <br>
+    <!-- urls.py에 잇는 패턴: edit 밖에 없음.
+     생성되는 url: blog/0/add/ -->
+    <a href="{% url 'edit' 0 'add' %}">Add </a> <br>
+    여기부터 sub-template<br>
+
+    {% for d in data%}
+        <!-- 생성되는 url: /bolg/5/detail -->
+    
+            <a href="{url 'edit' d.pk 'detail' %}">{{d.title}}</a>
+       <br>
+    {%endfor%}
+
+
+    
+
+{% endblock %}
+
