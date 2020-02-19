@@ -1,0 +1,23 @@
+<!-- import, includ 개념 -->
+{% extends 'myboard/base.html' %}
+
+
+<!-- base template안의 위치 지정 -->
+
+{% block content %}
+    <br>
+   
+    <a href="{% url 'myboard'  category 0 'add' %}">Add </a> <br>
+    여기부터 sub-template<br>
+
+    {% for d in data %}
+    
+            <a href="{% url 'myboard' category d.pk 'detail' %}"> {{d.title}} 조회수 {{d.cnt}}</a>
+       <br>
+    {% endfor %}
+
+
+    
+
+{% endblock %}
+
