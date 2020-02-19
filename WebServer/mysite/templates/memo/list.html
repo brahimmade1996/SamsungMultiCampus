@@ -1,0 +1,42 @@
+{% extends 'memo/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+table tr td {padding: 20px;}
+table { background-image: url({% static 'wood-591619_1920.jpg' %}) ;}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<!-- base template안의 위치 지정 -->
+
+{% block content %}
+    <br>
+   
+    <a href="{% url 'Memo' category 0 'add' %}">Add </a> <br>
+    여기부터 sub-template<br>
+<table >  
+    <tr> 
+    {% for d in data %}
+    <td>
+            <a href="{% url 'Memo' category d.pk 'detail' %}"> {{d.title}}</a>
+        </td>
+    {% endfor %}
+</tr>
+</table>
+    
+
+{% endblock %}
+</body>
+</html>
