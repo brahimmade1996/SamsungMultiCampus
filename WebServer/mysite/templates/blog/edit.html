@@ -1,26 +1,33 @@
 
-<form action="{% url 'edit' pk %}" method=post>
-    {% csrf_token %}
- 
-        {{ form.as_p }}
- 
-    <input type="submit" value="작성" >
- 
- </form>
- 
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<!-- html을 활용해서 field를 연동할 때 -->
+ <style>
+      .bg { background-color: #eeeeee; }
+      .bd { border: 1px solid #666666; }
+ </style>
 
-<!-- <form action = '' method = post>
-    <정확하게 경로를 지정하기 위해서 urls.py에서 지정한 name이름 쓰기 -->
-<!-- <form action="{% url 'add' %}" method = post>
-    {% csrf_token %}
-   title <input input = text name = 'title' ><br>
-   text <textarea rows =10 clos = 30 name = 'text'>
-   </textarea><br>
-    <input type="submit" value = '글 올리기'>
-    
-</form> --> 
+{% if form.title.value %}
+<h1>  수정하기 </h1>
+{% else %}
+<h1>  신규작성</h1>
+{% endif %}
+
+
+<form method=post>
+   {% csrf_token %}
+   	{{ form.as_p }}
+
+   <input type="submit" value="작성" >
+
+</form>
+
+<script>
+    // table에서 id의 title 노드에 bg, bd 속성 적용하기
+   $("#id_title").addClass('bg bd');
+</script>
+
+
 
 
 
