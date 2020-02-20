@@ -20,5 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ajax/', include('ajax.urls')),
     path('', include('myapp.urls')),
-    path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')),
+    path('myboard/', include('myboard.urls')),
+    path('memo/', include('memo.urls')),
+
 ]
