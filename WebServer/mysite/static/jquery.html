@@ -1,0 +1,76 @@
+
+<head>
+    <meta charset="UTF-8">
+  </head>
+  
+  
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+  <button id="btnMore">More</button>
+  
+  
+  
+  <div id="view">
+    <div id="item">
+     <a href=list?id=4> <span id=title>제목~~~~~~~~</span> </a> 
+       조회수<span id=cnt> 0 </span>
+       <!-- 자바스크립트 함수 호출 -> 페이지가 넘어가지 않음.-->
+       <a href="javascript: deleteBoard()" id = 'del'>지우기</a>
+     <br>
+    <div> 
+  </div>   
+  
+
+  <script>
+    //  tag의 속성값 바꾸기 -> 6이 나와야함.
+    // $('#del').attr('href', 'javascript:deleteBoard(6)');
+
+    /////// 지우기
+    function deleteBoard(pk){
+        // alert(pk);
+        $.get('/myboard/ajaxdel', {pk: pk}, function(json){
+                // alert(json.error);
+                // db에서 제거한 후, 클라이어트로 넘어옴
+                $('#item_'+pk).remove();
+        });
+        //get 함수 이후에 지우면 db에서 안지워지고, 클라이언트에서만 지워짐. 
+        // $('#item_'+pk).remove();
+
+    }
+    
+    //////// add -> page 추가 
+    $("#item").hide();  
+   
+   var page = 1;
+   
+   function getPage(page) {
+		
+	   $.get("/myboard/ajaxget", {page:page}, function(json) {	   
+            console.log(JSON.stringify(json));
+            
+            if (json.datas.length == 0) alert('마지막입니다');
+			for (i = 0; i < json.datas.length; i++) {		
+                item = $("#item").clone();
+                // # item의 속성을 pk값으로 바꾸기
+                item.attr('id', 'item_' + json.datas[i].pk)
+				item.show();
+                $("#title", item).html(json.datas[i].title);
+                $('#del', item).attr('href', 'javascript:deleteBoard('+json.datas[i].pk+")");
+				$("#cnt", item).text(json.datas[i].cnt);      		
+				$("#view").append(item);   					
+			}   
+		});		
+   }    
+
+   $("#btnMore").click( function() {  
+			page++;
+			getPage(page);
+   });
+   
+   getPage(page);   
+   
+
+
+
+</script>
