@@ -1,0 +1,199 @@
+
+<head>
+    <meta charset="UTF-8">
+  </head>
+
+
+
+ <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<button id = 'btnAdd'>Add</button>
+
+
+ <!-- data를 동적으로 만들기 -->
+<div id = "view">
+    <div id = 'item'>
+        <a href="list?id = 4"> <span id = 'title'>제목</span></a>
+         조회수 <span id = 'cnt'> 5 </span><br>
+    </div>
+</div>
+
+
+<script>
+
+    
+    // 방법 1
+    // $('#view').append('<a href = skdjfksjdkf> 데이터2 </a><br>')
+    
+
+    //방법2
+    // $('#btnADD').click(function(){
+    //    $('#view').append("<a href = skdjfksjdkf> 데이터2 </a><br>");
+    //       });
+
+
+    // 방법3: 노드를 북사
+     
+    // item = $('#item').colne() 
+    // $('#title').html('제목1')  
+    // $('#cnt').text('10')
+    // $('#View').append(item)
+
+    // $('#btnADD').click(function(){
+    // $('#view').append(item);
+    //     });
+    
+
+
+    //방법 4: 노드의 값을 변경하기
+//    var index= 0;
+
+//     $('#btnAdd').click(function(){
+//         item = $('#item').colne();
+//         $('#title', item).html('제목' + index)  ;
+//         $('#cnt', item).text('index');
+//         $('#View').append(item);
+//         index ++;
+
+//     });
+
+
+    //방법 5:  첫번째 샘플hide
+//     $('#item').hide();
+
+//     var index= 0;
+
+//     $('#btnAdd').click(function() {
+//         item = $('#item').clone();
+//         item.show();
+//         $('#title', item).html('제목' + index)  ;
+//         $('#cnt', item).text('index');
+//         $('#view').append(item);
+//         index++;
+
+// });
+
+//  // 방법 6: 실제 데이터에서 받기
+//  $('#item').hide();
+
+//     var index= 0;
+    
+//     $('#btnAdd').click(function() {
+//         json = {"datas": [{"pk": 2, "title": "\u3134\uc54c\ub0ad\ub780\uc5b4", "cnt": 2}, 
+//                     {"pk": 3, "title": "kjkjkjjjkkkkk", "cnt": 2},
+//                     {"pk": 4, "title": "\ucd08\ucf5c\ub9bf", "cnt": 0}]}
+        
+//         // 디버깅
+//         console.log(json.datas[0].title)
+//         console.log(json.datas[1].title)
+
+
+//         item = $('#item').clone();
+//         item.show();
+//         $('#title', item).html('제목' + index)  ;
+//         $('#cnt', item).text('index');
+//         $('#view').append(item);
+//         index++;
+
+// });
+
+// 방법 7. for문 사용하기
+// $('#item').hide();
+
+//     var index= 0;
+    
+//     $('#btnAdd').click(function() {
+//         json = {"datas": [{"pk": 2, "title": "\u3134\uc54c\ub0ad\ub780\uc5b4", "cnt": 2}, 
+//                     {"pk": 3, "title": "kjkjkjjjkkkkk", "cnt": 2},
+//                     {"pk": 4, "title": "\ucd08\ucf5c\ub9bf", "cnt": 0}]}
+        
+//         for (i = 0; i < json.datas.length; i++) {
+//             console.log(json.datas[i].title);
+//             item = $('#item').clone();
+//             item.show();
+//             $('#title', item).html(json.datas[i].title)  ;
+//             $('#cnt', item).text(json.datas[i].cnt);
+//             $('#view').append(item);
+//         }
+//     });
+
+
+
+// 방법7: 함수로 만들기
+// function getPage(page){
+//     json = {"datas": [{"pk": 2, "title": "\u3134\uc54c\ub0ad\ub780\uc5b4", "cnt": 2}, 
+//                     {"pk": 3, "title": "kjkjkjjjkkkkk", "cnt": 2},
+//                     {"pk": 4, "title": "\ucd08\ucf5c\ub9bf", "cnt": 0}]}
+        
+//         for (i = 0; i < json.datas.length; i++) {
+//             item = $('#item').clone();
+//             item.show();
+//             $('#title', item).html(json.datas[i].title)  ;
+//             $('#cnt', item).text(json.datas[i].cnt);
+//             $('#view').append(item);
+//         }
+//     }
+
+// $('#btnAdd').click(function() {
+//     getPage(2);
+// });
+    
+
+
+// 방법8: 함수로 만들기2 -> page 하나씩 늘리면서 append
+// function getPage(page){
+//     json = {"datas": [{"pk": 2, "title": "\u3134\uc54c\ub0ad\ub780\uc5b4", "cnt": 2}, 
+//                     {"pk": 3, "title": "kjkjkjjjkkkkk", "cnt": 2},
+//                     {"pk": 4, "title": "\ucd08\ucf5c\ub9bf", "cnt": 0}]}
+        
+//         for (i = 0; i < json.datas.length; i++) {
+//             item = $('#item').clone();
+//             item.show();
+//             $('#title', item).html(json.datas[i].title)  ;
+//             $('#cnt', item).text(json.datas[i].cnt);
+//             $('#view').append(item);
+//         }
+//     }
+
+// $('#btnAdd').click(function() {
+//     page++;
+//     getPage(page);
+// });
+
+// $.get('myboard/ajaxget', {page: 1}, function(json){
+//     console.log(JSON.stringify(json));
+
+// });
+ 
+// 방법10: 
+$("#item").hide();  
+   
+   var page = 1;
+   
+   function getPage(page) {
+		//json = {"datas": [{"pk": 1, "title": "자동차 검출44343", "cnt": 5}, {"pk": 2, "title": "32321321", "cnt": 0}, {"pk": 3, "title": "32312323123", "cnt": 0}]}
+		
+	   $.get("/myboard/ajaxget", {page:page}, function(json) {	   
+			console.log(JSON.stringify(json));
+			for (i = 0; i < json.datas.length; i++) {		
+				item = $("#item").clone();
+				item.show();
+				$("#title", item).html(json.datas[i].title);
+				$("#cnt", item).text(json.datas[i].cnt);      		
+				$("#view").append(item);   					
+			}   
+		});		
+   }    
+   $("#btnAdd").click( function() {  
+			page++;
+			getPage(page);
+   });
+   
+   getPage(page);   
+   
+
+
+
+</script>
+
