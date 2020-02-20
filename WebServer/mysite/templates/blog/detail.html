@@ -8,9 +8,10 @@
 
 게시물을 보여줘<br>
 
-    {{d.text|linebreaks}}  
+{{ form.as_p }}
+    <!-- {{d.text|linebreaks}}   -->
     <!-- linebreaks: enter -> <br>로 바꿔줌 -->
 
-    <a href="{%  url 'edit' d.pk  %}">수정</a>
+    <a href="{%  url 'edit' d.pk 'edit'  %}">수정</a>
 
 {% endblock %}
