@@ -58,7 +58,7 @@
 - git 파일 만들기
 - PIL로 한글 출력하기
 
-#### 1.3. [화소 영역 처리](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_1.필터(다양한 필터%2C정규화%2C1차미분%2C2차 미분%2C엣지 검출%2C이상치 검출).ipynb)
+#### 1.3. [화소 영역 처리](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_1.필터(다양한필터%2C정규화%2C1차미분%2C2차미분%2C엣지검출%2C이상치 검출).ipynb)
 
 #### 1.4. [공간 정보 인코딩(필터)](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_1.%ED%95%84%ED%84%B0(%EB%8B%A4%EC%96%91%ED%95%9C%20%ED%95%84%ED%84%B0%2C%EC%A0%95%EA%B7%9C%ED%99%94%2C1%EC%B0%A8%EB%AF%B8%EB%B6%84%2C2%EC%B0%A8%20%EB%AF%B8%EB%B6%84%2C%EC%97%A3%EC%A7%80%20%EA%B2%80%EC%B6%9C%2C%EC%9D%B4%EC%83%81%EC%B9%98%20%EA%B2%80%EC%B6%9C).ipynb)
 
