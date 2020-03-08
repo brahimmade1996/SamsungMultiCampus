@@ -16,6 +16,7 @@
    max_r = (np.where(hr[0]==np.max(hr[0])))[0][0]
    ```
 
+<img src="images\1.chromakey.png"  />
 
 #### 1.2. [화소 점처리](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200107_day2_2.화소점처리%2C클래핑%2CLUT%2Cgif_file%2Cpil_한글처리(np.clip%2Cnp.LUT).ipynb)
 -  선형 연산
@@ -29,15 +30,31 @@
     - reverce LUT
     - posterise LUT
     - gamma LUT
+  <table>
+      <tr>
+      <td> <img src="images\1.binary_LUT.png"  /></td>	
+      <td> <img src="images\1.reverce_LUT.png"  /></td>	
+      <td> <img src="images\1.posterise_LUT.png"  /></td>	
+      <td> <img src="images\1.gamma_LUT.png"  /></td>
+      </tr>
+  </table>
+  
 - git 파일 만들기
 - PIL로 한글 출력하기
 
 #### 1.3. [화소 영역 처리](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_1.필터(다양한필터%2C정규화%2C1차미분%2C2차미분%2C엣지검출%2C이상치검출).ipynb)
+- 화소 점처리: 픽셀 단위 값만 변경하는 것
+- 화소 영역 처리: 픽셀 값과 그 주위 값(공간 영역) 연산
+- 수동으로 kernel만들어 결과 확인하기
+	- 평균으로 bluering
+	- 자기 자신을 이용한 kernerl
+	- sharp효과
+	- 수평 엣지 찾기
+	<img src="./images/1.mean_blur.png"  />
 
 #### 1.4. [공간 정보 인코딩(필터)](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_1.%ED%95%84%ED%84%B0(%EB%8B%A4%EC%96%91%ED%95%9C%20%ED%95%84%ED%84%B0%2C%EC%A0%95%EA%B7%9C%ED%99%94%2C1%EC%B0%A8%EB%AF%B8%EB%B6%84%2C2%EC%B0%A8%20%EB%AF%B8%EB%B6%84%2C%EC%97%A3%EC%A7%80%20%EA%B2%80%EC%B6%9C%2C%EC%9D%B4%EC%83%81%EC%B9%98%20%EA%B2%80%EC%B6%9C).ipynb)
 
-- 화소 점처리: 픽셀 단위 값만 변경하는 것
-- 화소 영역 처리: 픽셀 값과 그 주위 값(공간 영역) 연산
+
 - 화소 마스크= 회선 필터 = 회선 처리 = 컨볼루션
 - 회선 마스크: 주변 픽셀과의 평균 사용 
 - 종류
@@ -46,11 +63,18 @@
 	- 샤프닝
 	- 경계선 검출(수직, 수평)
 		- 1차 미분을 이용한 edge 검출
+		
 		- 2차 미분을 이용한 edge 검출
+		
+		  <img src="images\1.filter.png" >
 	- 잡음 제거
 		- 가우시안 blur
+		
 		- 소벨 필터
+		
 		- median blur
+		
+		  <img src="images\1.noise_blur.png" >
 	
 #### 1.5.[analog to digital ](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_2.아날로그신호_to_디지털신호.ipynb)
 -  표준화 단계
@@ -65,21 +89,48 @@
 	- cv2.threshold() :  histogram보고 thheshold 적용  
 	- cv2.THRESH_OTSU: 역치값을 찾는 알고리즘 이용
 	- cv2.adaptiveThreshold: adaptive threshole값 찾기
+	
+	  <img src="images\2.threshold.png" >
 - noise 제거 후, threshold
+	
 	- GaussianBlur - threshold
+	
+
+<img src="images\2.sdoqu.png" >
+
+<img src="images\2.bills.png" >
 
 #### 2.2. [shape detection](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200109_day4_2.shape_detection(contour%2C%20morphologyEx).ipynb)
+
 -  외곽선 검출
-	- cv2.findContours() : 
+	- cv2.findContours() 
 	- cv2.drawContours(): 외곽선 그리기
 - 외곽선 개수에 따라 도형 확인하기
+	
 	- cv2.approxPolyDP(): contours에서 꼭지점 개수 찾기
+	
+	  <img src="images\2.shape.png" width = 300px align = left>
 - Morphology: cv2.morphologyEx()
   - 팽창: cv2.MORPH_DILATE 
+  
   - 침식: cv2.MORPH_ERODE
+  
   - open:cv2.MORPH_OPEN ->침식 후 팽창(뾰족한 부분들이 없엉짐)
+  
   - close:  cv2.MORPH_CLOSE ->팽창 후 침식(구멍들이 메워짐.)
-  - 예제: 동전 찾기, 영수증 찾기, 바둑돌 검출
+  
+  - <img src="images\2.morphology.png" height = 200px >
+  
+  - 예제: 동전 찾기, 영수증 찾기
+  
+    <table>
+        <tr>
+        <td><img src="images\2.coins.png" width = 200px ></td>
+        <td><img src="images\2.bills2.png"width = 200px ></td>
+        </tr>
+    </table>
+  
+    
   
 
 ---
@@ -94,7 +145,6 @@
   pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR/tesseract.exe'
   str = pytesseract.image_to_string('./images/bill.jpg')
   ```
-
   ---
   
 ## 4.Object detection
@@ -106,6 +156,13 @@
   - cv2.countour(): 외곽선 찾기
   - cv2.morphologyEx(): 끊어진 점 연결
   - cv2. HoughCircles(): 원 찾는 함수
+<table>
+    <tr>
+    <td><img src="images\2.canny.png"/ ></td>
+    <td><img src="images\2.doll.png" /></td>
+    <td><img src="images\2.book.png" /></td>
+    </tr>
+</table>
 
 ---
 ## 5. [shape transformation](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200110_day5_3.affin_transformation.ipynb)
@@ -144,11 +201,37 @@ M = cv2.getPerspectiveTransform(pts1, pts2)
 img_result = cv2.warpPerspective(img, M, (width, height))
 ```
 
+<table>
+    <tr>
+    <td><img src="images\5.flip.png" ></td>
+    <td><img src="images\5.shift.png" ></td>
+    <td><img src="images\5.rotate.png" ></td>
+    <td><img src="images\5.scale.png" ></td>
+    </tr>
+</table>
+
 5.7. 예제
 
 - 영수증
+
 - 폴라로이드 사진
+
 - 명함
+
+  <table>
+      <tr>
+      <td><img src="images\5.namecard.png" ></td>
+      <td><img src="images\5.namecard2.png" ></td>
+      <td><img src="images\5.namecard3.png" ></td>
+      <td><img src="images\5.namecard4.png" ></td>
+      </tr>
+      <tr>
+      <td><img src="images\5.picture.png" ></td>
+      <td><img src="images\5.pircure2.png" ></td>
+      <td><img src="images\5.pircure3.png" ></td>
+      <td><img src="images\5.pircure4.png" ></td>
+      </tr>
+  </table>
 
 ---
 
