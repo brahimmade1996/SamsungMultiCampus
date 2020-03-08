@@ -152,11 +152,10 @@ img_result = cv2.warpPerspective(img, M, (width, height))
 
 ---
 
-## [6. corner 검출](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_3.%EB%B3%B5%EC%9E%A1%ED%95%9C_corner%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0(ORB.detect%2Ccv2.BFMatcher_create()%2CdrawMatches%2Ccv2.Stitcher).ipynb
+## [6. corner 검출](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_1.corrner(cv2.cornerHarris%2Cfeature_detector).ipynb)
 
 #### 6.1. corner 찾기
 - cv2.cornerHarris()
-- 
 #### 6.2 featureDetector
 -  cv2.FastFeatureDetector_create(threshold=50)
 -
