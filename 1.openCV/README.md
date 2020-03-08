@@ -227,9 +227,9 @@ img_result = cv2.warpPerspective(img, M, (width, height))
       </tr>
       <tr>
       <td><img src="images\5.picture.png" ></td>
-      <td><img src="images\5.pircure2.png" ></td>
-      <td><img src="images\5.pircure3.png" ></td>
-      <td><img src="images\5.pircure4.png" ></td>
+      <td><img src="images\5.picture2.png" ></td>
+      <td><img src="images\5.picture3.png" ></td>
+      <td><img src="images\5.picture4.png" ></td>
       </tr>
   </table>
 
@@ -242,12 +242,12 @@ img_result = cv2.warpPerspective(img, M, (width, height))
 #### 6.2 featureDetector
 - cv2.FastFeatureDetector_create(threshold=50)
 
-  ```html
+  ```
   <table>
   <tr>
-  <td><img src="images\6.corner.png" /></td>
-  <td><img src="images\6.corner2.png" /></td>
-  <td><img src="images\6.corner3.png" /></td>
+  <td><img src="./images/6.corner.png" /></td>
+  <td><img src="./images/6.corner2.png" /></td>
+  <td><img src="./images/6.corner3.png" /></td>
   </tr>
   </table>
   ```
