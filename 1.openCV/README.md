@@ -74,7 +74,7 @@
 		
 		- median blur
 		
-		  <img src="images\1.noise_blur.png" >
+		  <img src="images\1.noise_blur.png" height= 200px aligh = left>
 	
 #### 1.5.[analog to digital ](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200108_day3_2.아날로그신호_to_디지털신호.ipynb)
 -  표준화 단계
@@ -96,9 +96,9 @@
 	- GaussianBlur - threshold
 	
 
-<img src="images\2.sdoqu.png" >
+<img src="images\2.sdoqu.png" height=200px >
 
-<img src="images\2.bills.png" >
+<img src="images\2.bills.png" height = 200px >
 
 #### 2.2. [shape detection](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200109_day4_2.shape_detection(contour%2C%20morphologyEx).ipynb)
 
@@ -109,7 +109,7 @@
 	
 	- cv2.approxPolyDP(): contours에서 꼭지점 개수 찾기
 	
-	  <img src="images\2.shape.png" width = 300px align = left>
+	  <img src="images\2.shape.png" width = 300px align = right>
 - Morphology: cv2.morphologyEx()
   - 팽창: cv2.MORPH_DILATE 
   
@@ -158,9 +158,9 @@
   - cv2. HoughCircles(): 원 찾는 함수
 <table>
     <tr>
-    <td><img src="images\2.canny.png"/ ></td>
-    <td><img src="images\2.doll.png" /></td>
-    <td><img src="images\2.book.png" /></td>
+    <td><img src="images\4.canny.png"/ ></td>
+    <td><img src="images\4.doll.png" /></td>
+    <td><img src="images\4.book.png" /></td>
     </tr>
 </table>
 
@@ -240,15 +240,44 @@ img_result = cv2.warpPerspective(img, M, (width, height))
 #### 6.1. corner 찾기
 - cv2.cornerHarris()
 #### 6.2 featureDetector
--  cv2.FastFeatureDetector_create(threshold=50)
+- cv2.FastFeatureDetector_create(threshold=50)
+
+  ```html
+  <table>
+  <tr>
+  <td><img src="images\6.corner.png" /></td>
+  <td><img src="images\6.corner2.png" /></td>
+  <td><img src="images\6.corner3.png" /></td>
+  </tr>
+  </table>
+  ```
+
+  
 #### [예제: QRcode](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_2.corner%EB%A5%BC_%EC%9D%B4%EC%9A%A9%ED%95%9C_QRcode.ipynb)
 - corner 찾기
+
 - QRcode 인식, 생성
+
+  <table>
+  <tr>
+  <td><img src="images\6.qr1.png" /></td>
+  <td><img src="images\6.qr2.png" /></td>
+  <td><img src="images\6.qr3.png" /></td>
+  </tr>
+  </table>
 #### 6.3.[고급코너검출](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_3.%EB%B3%B5%EC%9E%A1%ED%95%9C_corner%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0(ORB.detect%2C_cv2.BFMatcher_create%2C_drawMatches%2C%20cv2.Stitcher).ipynb)
 - SIFT(Scale-Invariant Feature Transform)
 - ORB: cv2.ORB_create()
 #### 6.4. 거리재서 매칭점 찾기
 - 유클리디안 distance
+
 - 해밍 distance: cv2.BFMatcher_create(cv2.NORM_HAMMING)
+
+- <table>
+  <tr>
+  <td><img src="images\6.snack.png" /></td>
+  <td><img src="images\6.snack2.png" /></td>
+  </tr>
+  </table>
 #### 예제: 두 과자 이미지에서 코너점 검출해서 배교
 - 파노라마: cv2.Stitcher_create()
