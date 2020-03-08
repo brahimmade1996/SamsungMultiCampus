@@ -158,15 +158,12 @@ img_result = cv2.warpPerspective(img, M, (width, height))
 - cv2.cornerHarris()
 #### 6.2 featureDetector
 -  cv2.FastFeatureDetector_create(threshold=50)
--
 #### [예제: QRcode](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_2.corner%EB%A5%BC_%EC%9D%B4%EC%9A%A9%ED%95%9C_QRcode.ipynb)
 - corner 찾기
 - QRcode 인식, 생성
-- 
 #### 6.3.[고급코너검출](https://github.com/shiney5213/SamsungMultiCampus/blob/master/1.openCV/200114_day6_3.%EB%B3%B5%EC%9E%A1%ED%95%9C_corner%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0(ORB.detect%2C_cv2.BFMatcher_create()%2C_drawMatches%2C%20cv2.Stitcher).ipynb)
 - SIFT(Scale-Invariant Feature Transform)
 - ORB: cv2.ORB_create()
-- 
 #### 6.4. 거리재서 매칭점 찾기
 - 유클리디안 distance
 - 해밍 distance: cv2.BFMatcher_create(cv2.NORM_HAMMING)
