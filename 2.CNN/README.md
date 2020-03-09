@@ -122,7 +122,7 @@ def creatModel(layers, activation, input_dim):
 
 - He초기화
 
-#### [4.6. 선형/ 비선](https://github.com/shiney5213/SamsungMultiCampus/blob/master/2.CNN/200121_day2_3.%EC%84%A0%ED%98%95vs%EB%B9%84%EC%84%A0%ED%98%95%ED%95%A8%EC%88%98.ipynb)
+#### [4.6. 선형/ 비선형](https://github.com/shiney5213/SamsungMultiCampus/blob/master/2.CNN/200121_day2_3.%EC%84%A0%ED%98%95vs%EB%B9%84%EC%84%A0%ED%98%95%ED%95%A8%EC%88%98.ipynb)
 - 왜 비선형으로 풀어야 하는가?
 - 선형함수 조합의 한계
 - 경사하강법을 이용한 최적화
