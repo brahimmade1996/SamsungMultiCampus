@@ -95,7 +95,9 @@
     <td><img src="images\2.yolo_4.png"  /></td>
     </tr>
 </table>
+
 ---
+
 ## 3. [Segmentation: MRCNN](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200130_day3_2.SEGMENTATION(MRCNN).ipynb)
 
 - RPN(Region Proposal Network)
@@ -108,6 +110,8 @@
     <td><img src="images\3.mrcnn_2.png"  /></td>
     </tr>
 </table>
+
+---
 
 ## 4. [Pose Detection](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200130_day3_3.openpose.ipynb)
 
