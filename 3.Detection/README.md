@@ -7,7 +7,7 @@
 - 영역의 밝기 차들을 이용한 feature
 - 다양한 형태의 elementary feature들을 다수 조합하여 물체에 대한 특징 추출
 - [face detection](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200128_day1_1.Face_Detection.ipynb)
--- haar llight  + Ada boost + cascade
+- haar llight  + Ada boost + cascade
 
 <table>
     <tr>
@@ -22,11 +22,11 @@
 - 히스토그램 bin값을 이용
 - [people detection](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200128_day1_2.full_body_detection(HOG_%EB%8F%99%EC%98%81%EC%83%81%EC%97%90%EC%84%9C%EA%B2%80%EC%B6%9C).ipynb)
 - 강한 분류기 사용
-- <img src="images\1.hog_1.png"  />
+ <img src="images\1.hog_1.png"  />
 
 #### 1.3.  SIFT(Scale Invariant Feature Transform)
 - 영상에서 코너점 등 식별이 용이한 특징점을 선택한 후, 각 특징점을 중심으로 한 로컬 패치에 대해 특징 벡터를 추출
-- 
+
 #### 1.4. Ferns
 - 영상에서 먼저 특징점들을 뽑고 각 특징점을 중심으로 로컬패치에 대해 계산
 
@@ -34,9 +34,11 @@
 - 영상의 texture 분류, 얼굴 인식
 - 각 픽셀의 주변 3 * 3 영역의 상대적인 밝기 변화를 2진수로 코딩한 인덱스값
 - 각 셀마다 LBP에 대한 히스토그램을 일렬로 연결한 벡터를 최종 feature로 사용
+
 #### 1.6. MCT(Modified cencus Transform)
 - 얼굴 검출에서 가장 뛰어난 검출 성능
 - LBP와 비슷
+
 #### 1.7. [ORB](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200128_day1_3.회전문제해결_ORB알고리즘%2CHomograph.ipynb)
 - 회전 문제에 강함
 - [비슷한 책 찾기](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200128_day1_3.%ED%9A%8C%EC%A0%84%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0_ORB%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%2CHomograph.ipynb)
@@ -54,7 +56,7 @@
 
 - 카메라 회전되었을 때 사진보고 얼마나 변형해야 하는지 찾을 때
 
-  <table>
+<table>
       <tr>
       <td><img src="images\1.homo_1.png"  /></td>
       <td><img src="images\1.homo_2.png"  /></td>
@@ -70,7 +72,7 @@
 
 - 리눅스 서버에서 YOLO  test 하기
 
-  <table>
+<table>
       <tr>
       <td><img src="images\2.yolo_1.png"  /></td>
       <td><img src="images\2.yolo_2.png"  /></td>
@@ -123,6 +125,7 @@
 </table>
 
 ---
+
 ## 5. 기타
 
 - [서버에서 jupyter notebook 사용하기](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200129_day2_1.서버에서_주피터노트북_실행하기.ipynb)
