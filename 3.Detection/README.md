@@ -125,6 +125,6 @@
 ---
 ## 5. 기타
 
-- [서버에서 jupyter notebook 사용하기](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200129_day2_1.서버에서_주피터노트북 실행하기.ipynb)
+- [서버에서 jupyter notebook 사용하기](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200129_day2_1.서버에서_주피터노트북_실행하기.ipynb)
 - [openCV에서 keras에서 만든 모델 사용하기](https://github.com/shiney5213/SamsungMultiCampus/blob/master/3.Detection/200130_day3_1.kerasmodel을_opencv에서_활용하기위해pb형식으로변환.ipynb)
 
