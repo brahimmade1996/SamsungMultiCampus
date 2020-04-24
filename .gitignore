@@ -1,7 +1,7 @@
 
 # Created by https://www.gitignore.io/api/data,python,images,jupyternotebooks
 # Edit at https://www.gitignore.io/?templates=data,python,images,jupyternotebooks
-
+수강생일지/
 data/
 *.cfg
 *.weights
