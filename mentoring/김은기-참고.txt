@@ -1,3 +1,13 @@
-https://github.com/zedr/clean-code-python
+﻿https://github.com/zedr/clean-code-python
 파이썬 클린코드
 https://github.com/zedr/clean-code-python
+
+
+* 라즈베리파이 같은거
+- 오드로이드 
+
+* reack
+- MPM 사용해야 함.
+
+* gitlab사용하고
+* 도커, hub로 올려서 빌드하고
